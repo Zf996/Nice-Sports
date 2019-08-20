@@ -1,0 +1,18 @@
+/* pages/cart/cart.wxss */
+/* 商品卡下面的两个按钮 */
+.btn van-button{
+  display: inline-block;
+  margin-right:10rpx; 
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 5rpx;
+  font-weight: bolder;
+}
+.btn van-button:nth-child(1){
+  background: #FF976A;
+}
+.btn van-button:nth-child(2){
+  background: #FF4444;
+}

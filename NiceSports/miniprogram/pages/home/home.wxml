@@ -1,0 +1,49 @@
+<!--pages/home/home.wxml-->
+<!-- 轮播图 ------------------------------------- -->
+<swiper indicator-dots="{{indicatorDots}}" 
+autoplay="{{autoplay}}" 
+interval="{{interval}}" 
+duration="{{duration}}" 
+circular="{{circular}}">
+<!--indicator-dots 是否显示面板指示点  -->
+<!--autoplay 是否自动切换  -->
+<!--interval 自动切换时间间隔  -->
+<!--duration 滑动动画时长  -->
+<!--circular 是否采用衔接滑动  -->
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图下面的四项 -->
+<view class="content-imgs">
+  <view class="dec-imgs"  wx:for="{{imgUrls2}}" wx:key="{{index}}">
+    <image class="icon-img" src="{{item.img}}"></image>
+      <view class="icon-text">{{item.txt}}</view>  
+    </view>
+</view>
+<!-- 热门鞋款 -->
+<view class="hotTxt">
+  <image src="../../images/cut.png"></image>
+  <text >热门鞋款</text> 
+</view>
+<!-- 海绵宝宝  派大星  章鱼大哥 -->
+<view class="hotshoes">
+  <view wx:for="{{imgUrlsHotShoes}}" wx:key="{{index}}" class="hotshoesItem">
+    <image class="hotshoesImg" src="{{item.img}}"></image>
+    <view class="shoeName">{{item.shoeName}}</view>
+    <view class="shoeSubName">{{item.shoeSubName}}</view>
+    <view class="salePrice">{{item.salePrice}}</view>
+    <view class="saleTime">{{item.saleTime}}</view>
+  </view>
+</view>
+<!-- 品牌活动 -->
+<view class="chaoinfo">
+  <image src="../../images/cut.png"></image>
+  <text >潮流资讯</text> 
+</view>
+<view class="brand">
+  <image class="brand_img" src="{{item.img}}" wx:for="{{brandImgUrls}}" wx:key="{{index}}"></image>
+  
+</view>

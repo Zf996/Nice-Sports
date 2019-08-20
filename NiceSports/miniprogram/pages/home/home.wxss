@@ -1,0 +1,136 @@
+/* pages/home/home.wxss */
+/* 去除滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.slide-image{
+  width: 100%;
+}
+/* 盛放轮播图下面的四个小图片的容器 */
+.content-imgs{
+  display: flex;
+  justify-content: space-around;
+  margin-top:10px; 
+}
+/* 四张小图片的背景 */
+.dec-imgs{
+  
+   width:100rpx;
+   height: 100rpx;
+   background-color: #000;
+   border-radius: 50%;
+   text-align: center;
+   /* line-height: 80px; */
+}
+
+/* 轮播图下面的四个小图片 */
+.icon-img{
+  width:60rpx;
+  height:60rpx;
+  margin-top:20rpx; 
+}
+/* 轮播图下面的四个小图片下面的文字 */
+.icon-text{
+  margin-top:20rpx; 
+  font-size: 22rpx;
+  color: rgba(99, 98, 100, 0.767);
+}
+/* 包含图片和文字的容器 */
+.hotTxt{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+height: 40rpx;
+margin-top:80rpx; 
+line-height:40rpx; 
+}
+/* 分割小红线 */
+.hotTxt image{
+width:40rpx;
+height: 40rpx;
+
+}
+/* 热门鞋款 */
+.hotTxt text{
+  font-size: 24rpx;
+ 
+  font-weight: bolder;
+}
+/* 热门鞋款-海绵宝宝 */
+.hotshoes{
+  display: flex;
+  justify-content: space-between;
+  margin-top:30rpx;
+}
+.hotshoes .hotshoesItem{
+  width:210rpx;
+
+}
+.hotshoes .hotshoesImg{
+  width:200rpx;
+  height:200rpx;
+}
+/* 名字 */
+.hotshoes .hotshoesItem:nth-child(1) .shoeName{
+  color:#7B170B ;
+  font-size: 22rpx;
+  font-weight: bolder;
+  background-color: #FFFB15;
+} 
+.hotshoes .hotshoesItem:nth-child(2) .shoeName{
+  color:#FFFB15;
+  font-size: 22rpx;
+  font-weight: bolder;
+  background-color: #FF7FAA;
+} 
+.hotshoes .hotshoesItem:nth-child(3) .shoeName{
+  color: #73FCD6;
+  font-size: 22rpx;
+  font-weight: bolder;
+  background-color: #7A4FD6;
+} 
+.shoeSubName{
+color: #7B170B;
+font-size: 18rpx;
+}
+/* 发售价格 */
+.salePrice{
+color:#888;
+font-size: 16rpx;
+}
+/* 发售时间 */
+.saleTime{
+color:#888;
+font-size: 16rpx;
+}
+/* 潮流资讯 */
+/* 包含图片和文字的容器 */
+.chaoinfo{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+height: 40rpx;
+margin-top:80rpx; 
+line-height:40rpx; 
+}
+/* 分割小红线 */
+.chaoinfo image{
+width:40rpx;
+height: 40rpx;
+
+}
+/* 品牌活动 */
+.chaoinfo text{
+  font-size: 24rpx;
+ 
+  font-weight: bolder;
+}
+/* 品牌活动下的图片 */
+.brand .brand_img{
+  width: 100%;
+  height:200rpx;
+  margin-top:20rpx;
+}

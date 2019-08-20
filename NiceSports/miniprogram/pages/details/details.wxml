@@ -1,0 +1,24 @@
+<!--pages/details/details.wxml-->
+<!-- <text>pages/details/details.wxml</text> -->
+<view>
+  <!-- 商品图片 模糊 -->
+  <view class="detail-container" style="background:url({{detail.images.large}}) no-repeat top"></view>
+  <!-- 商品图片 遮罩-->
+  <view class="detail-mask"></view>
+  <!-- 商品介绍-->
+  <view class="detail-info">
+  <!-- 左侧商品图片-->
+    <image src="{{detail.images.large}}" class="detail-img"></image>
+  </view>
+  <!-- 右侧商品  文字介绍-->
+    <view class="detail">
+  <!-- 右侧商品  标题-->
+      <view class="detail-nm">{{detail.title}}</view>
+      <view>{{detail.original_title}}</view>
+ 
+  <!-- 右侧商品  价格-->
+      <view class="">{{detail.countries[0]}}</view>
+  <!-- 右侧商品  发售时间-->
+      <view>{{detail.directors[0].name}}</view>
+    </view>
+</view>  
