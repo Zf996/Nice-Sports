@@ -1,4 +1,8 @@
 // pages/home/home.js
+// 创建数据库对象
+const db = wx.cloud.database({
+  env: "web-test-zf-732iz"
+})
 Page({
 
   /**
@@ -17,11 +21,12 @@ Page({
       {img:'../../images/shop.png',txt:'线上商城'},
       {img:'../../images/store.png',txt:'附近门店'}
     ],
-    imgUrlsHotShoes:[
-      { img: '../../images/haimian.png', shoeName: 'Nike Kyrie 5', shoeSubName:'SpongBob SquarePants',salePrice:'RMB999/$130',saleTime:'2019-08-10'},
-      { img: '../../images/paidaxing.png', shoeName: 'Nike Kyrie 5', shoeSubName:' Patrick Star', salePrice: 'RMB999/$130', saleTime: '2019-08-10'},
-      { img: '../../images/zhangyu.png', shoeName: 'Nike Kyrie 5', shoeSubName:'Squidward Tentacles', salePrice: 'RMB999/$130', saleTime: '2019-08-10'}
-    ],
+    // imgUrlsHotShoes:[
+    //   { img: '../../images/haimian.png', shoeName: 'Nike Kyrie 5', shoeSubName:'SpongBob SquarePants',salePrice:'RMB 999/$130',saleTime:'2019-08-10'},
+    //   { img: '../../images/paidaxing.png', shoeName: 'Nike Kyrie 5', shoeSubName:' Patrick Star', salePrice: 'RMB999/$130', saleTime: '2019-08-10'},
+    //   { img: '../../images/zhangyu.png', shoeName: 'Nike Kyrie 5', shoeSubName:'Squidward Tentacles', salePrice: 'RMB999/$130', saleTime: '2019-08-10'}
+    // ],
+    imgUrlsHotShoes:[],
     brandImgUrls:[
       { img:'../../images/adidas.jpg'},
       { img: '../../images/converse.jpg'},
@@ -33,6 +38,44 @@ Page({
     duration: 1000,      // 滑动动画时长
     // active: 0            //当前选中标签的索引
   },
+  loadAll:function(){
+    // 添加记录
+    // db.collection("nike_kyrie_5")
+    //   .add({
+    //     data: {
+    //       img: 'cloud://web-test-zf-732iz.7765-web-test-zf-732iz-1300035676/zhangyu.png',
+    //        shoeName: 'Nike Kyrie 5', 
+    //       shoeSubName: 'Squidward Tentacles', 
+    //        salePrice: 'RMB 999/$130', 
+    //        saleTime: '2019-08-10'
+    //     }
+
+    //   }).then(res=>{
+    //     // console.log(res)
+    //     }).catch(
+    //       err=>{
+    //         // console.log(err)
+    //       })
+
+// 查询记录
+    db.collection("nike_kyrie_5")
+    .get().then(res=>{
+      
+      this.setData({ imgUrlsHotShoes:res.data});
+      console.log(this.data.imgUrlsHotShoes);
+    }).catch(err=>{
+      console.log(err);
+    })
+  },
+
+  jumpDetail:function(event){
+    var id = event.target.dataset.id;
+    // console.log(id);
+    var url = "/pages/details/details?id="+id;
+    wx.navigateTo({
+      url: url,
+    })
+  },
   // onChange(event) {
   //   console.log(event.detail);
   // },
@@ -40,7 +83,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.loadAll();
   },
 
   /**

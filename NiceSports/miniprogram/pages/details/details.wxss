@@ -1,1 +1,67 @@
 /* pages/details/details.wxss */
+/* 1.背景图片 */
+
+.detail-container{
+  height: 400rpx;
+  opacity: .9;
+  
+  filter: blur(40rpx);/*滤镜  高斯模糊*/
+}
+/* 2.遮罩层 */
+.detail-mask{
+  width: 100%;/*遮罩层填满了父元素*/
+  height: 400rpx;/*高度同上*/
+  background: #333333;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: -10;
+}
+/* 3.商品的详细信息 */
+.detail-info{
+  position: absolute;  /*绝对定位：使其显示在模糊图片上方*/
+  top:0;
+  left:0;
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  padding: 20rpx;
+}
+/* 4.左侧图片 */
+.detail-img{
+  width: 350rpx;/*调整图片的大小*/
+  height: 80%;
+ margin-right:24rpx;
+
+}
+/* 5.右侧详情 */
+.detail{
+  line-height: 60rpx;/*行高*/
+}
+.detail view{
+  color: #fff;
+  font-size: 24rpx;
+
+}
+/* 右侧商品价格 */
+.detail .detail-price{
+  color: #fc0;
+  font-size: 36rpx;
+}
+.detail .btn-one{
+  margin-right: 5rpx;
+  width: 100rpx;
+}
+/* 商品描述 */
+.desc{
+  color: #555;
+  font-size: 24rpx;
+  padding: 20rpx;
+
+}
+/* 上传预览的图片 */
+.comment-img{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right:20rpx; 
+}

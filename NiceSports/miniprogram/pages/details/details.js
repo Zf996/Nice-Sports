@@ -1,18 +1,38 @@
 // pages/details/details.js
+const db = wx.cloud.database({
+  env:"web-test-zf-732iz"
+})
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+      list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中...',
+    })
+     var id = options.id;
+    //  console.log(id);
+    db.collection("nike_kyrie_5")
+    .where({
+      _id:id
+    })
+    .get()
+    .then(res=>{
+      wx.hideLoading();
+       this.setData({list:res.data})
+       console.log(this.data.list);
+    })
+    .catch(err=>{
 
+    })
   },
 
   /**

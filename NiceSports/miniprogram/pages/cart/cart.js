@@ -10,6 +10,7 @@ Page({
       { img: '../../images/paidaxing.png', shoeName: 'Nike Kyrie 5', shoeSubName: ' Patrick Star', salePrice: 'RMB999/$130', saleTime: '2019-08-10' },
       { img: '../../images/zhangyu.png', shoeName: 'Nike Kyrie 5', shoeSubName: 'Squidward Tentacles', salePrice: 'RMB999/$130', saleTime: '2019-08-10' }
     ],
+        imageURL:"../../images/haimian.png"
   },
 
   /**

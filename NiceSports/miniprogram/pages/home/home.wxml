@@ -31,7 +31,7 @@ circular="{{circular}}">
 <!-- 海绵宝宝  派大星  章鱼大哥 -->
 <view class="hotshoes">
   <view wx:for="{{imgUrlsHotShoes}}" wx:key="{{index}}" class="hotshoesItem">
-    <image class="hotshoesImg" src="{{item.img}}"></image>
+    <image data-id="{{item._id}}" bindtap="jumpDetail" class="hotshoesImg" src="{{item.img}}"></image>
     <view class="shoeName">{{item.shoeName}}</view>
     <view class="shoeSubName">{{item.shoeSubName}}</view>
     <view class="salePrice">{{item.salePrice}}</view>
@@ -47,3 +47,16 @@ circular="{{circular}}">
   <image class="brand_img" src="{{item.img}}" wx:for="{{brandImgUrls}}" wx:key="{{index}}"></image>
   
 </view>
+
+
+
+
+
+<!-- cloud://web-test-zf-732iz.7765-web-test-zf-732iz-1300035676/haimian.png
+
+cloud://web-test-zf-732iz.7765-web-test-zf-732iz-1300035676/paidaxing.png
+
+cloud://web-test-zf-732iz.7765-web-test-zf-732iz-1300035676/zhangyu.png -->
+
+
+
