@@ -1,10 +1,12 @@
 /* pages/buy/buy.wxss */
 /* 1.背景图片 */
-
+ .father{
+  position: relative;
+  
+} 
 .detail-container{
   height: 400rpx;
   opacity: .9;
-  
   filter: blur(40rpx);/*滤镜  高斯模糊*/
 }
 /* 2.遮罩层 */
@@ -30,8 +32,9 @@
 /* 4.左侧图片 */
 .detail-img{
   width: 350rpx;/*调整图片的大小*/
-  height: 80%;
+  height: 250rpx;
  margin-right:24rpx;
+ margin-top:20rpx; 
 
 }
 /* 5.右侧详情 */

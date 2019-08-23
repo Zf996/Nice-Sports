@@ -1,4 +1,5 @@
-// pages/details/details.js
+// pages/pay/pay.js
+// 创建数据库实例对象
 const db = wx.cloud.database({
   env:"web-test-zf-732iz"
 })
@@ -8,33 +9,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-      list:[]
+    imgurl:"",
+    show:false
   },
-
+  onClose() {
+    this.setData({ show: false });
+  },
+  tan:function(){
+    this.setData({ show: true });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '加载中...',
-    })
-    // 获取home组件传递过来的参数
-     var id = options.id;
-    //  console.log(id);
-    //  向数据库中查询数据
-    db.collection("nike_kyrie_5")
-    .where({
-      _id:id
-    })
-    .get()
-    .then(res=>{
-      wx.hideLoading();
-       this.setData({list:res.data})
-       console.log(this.data.list);
-    })
-    .catch(err=>{
-
-    })
+      // 向数据库lunbo2查询_id为efdeb2615d5f2cba06f75a0b265346d4的图片
+      db.collection("lunbo2")
+      .where({
+        _id: "efdeb2615d5f2cba06f75a0b265346d4"
+      })
+      .get().then(res=>{
+          this.setData({imgurl:res.data[0].img});
+          console.log(res.data);
+          console.log(this.data.imgurl);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
   },
 
   /**

@@ -1,18 +1,74 @@
 /* pages/cart/cart.wxss */
-/* 商品卡下面的两个按钮 */
-.btn van-button{
-  display: inline-block;
-  margin-right:10rpx; 
-  width: 150rpx;
-  height: 50rpx;
-  text-align: center;
-  line-height: 50rpx;
-  border-radius: 5rpx;
+/* 去除滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.slide-image{
+  width: 100%;
+  height: 400rpx;
+}
+
+.container{
+  position: relative;
+  margin-bottom:320rpx;
+  border-bottom:1px solid #fc0
+}
+.container .c_img image{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 350rpx;
+  height: 250rpx;
+}
+.container .txt{
+  margin-top:20rpx; 
+  position: absolute;
+  left:380rpx;
+  top:0;
+  
+}
+.name{
+  color: #000;
+  font-size: 24rpx;
   font-weight: bolder;
 }
-.btn van-button:nth-child(1){
-  background: #FF976A;
+.subname{
+  color: #000;
+  font-size: 22rpx;
 }
-.btn van-button:nth-child(2){
+.price{
+  color: #fc0;
+  font-size: 36rpx;
+}
+.pay{
+  margin-left: 50rpx;
+}
+/* 最下面的提交订单栏 */
+.bot{
+  display: flex;
+  justify-content: space-between;
+
+}
+.heji{
+  text-align: right;
+  font-size: 30rpx;
+  padding-left: 300rpx;
+   height: 80rpx;
+   line-height: 80rpx;
+}
+.sub{
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  width: 200rpx;
+  height: 80rpx;
   background: #FF4444;
+}
+text.price{
+  color: #FF4444;
+  font-size: 38rpx
 }

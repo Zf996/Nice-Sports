@@ -9,12 +9,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '../../images/lunbo-one.jpg',
-      '../../images/lunbo-two.jpg',
-      '../../images/lunbo-three.jpg',
-      '../../images/lunbo-four.jpg'
-    ],
+    // imgUrls: [
+    //   '../../images/lunbo-one.jpg',
+    //   '../../images/lunbo-two.jpg',
+    //   '../../images/lunbo-three.jpg',
+    //   '../../images/lunbo-four.jpg'
+    // ],
+    imgUrls:[],
     imgUrls2: [
       {img:'../../images/run.png',txt:'跑步赛事'},
       {img:'../../images/basketball.png',txt:'篮球赛事'},
@@ -27,10 +28,11 @@ Page({
     //   { img: '../../images/zhangyu.png', shoeName: 'Nike Kyrie 5', shoeSubName:'Squidward Tentacles', salePrice: 'RMB999/$130', saleTime: '2019-08-10'}
     // ],
     imgUrlsHotShoes:[],
-    brandImgUrls:[
-      { img:'../../images/adidas.jpg'},
-      { img: '../../images/converse.jpg'},
-      { img: '../../images/vans.png'}],
+    // brandImgUrls:[
+    //   { img:'../../images/adidas.jpg'},
+    //   { img: '../../images/converse.jpg'},
+    //   { img: '../../images/vans.png'}],
+    brandImgUrls:[],
     indicatorDots: true, // 是否显示面板指示点
     autoplay: true,      // 是否自动切换
     circular: true,      // 是否采用衔接滑动
@@ -57,7 +59,7 @@ Page({
     //         // console.log(err)
     //       })
 
-// 查询记录
+// 查询记录---三张图片的
     db.collection("nike_kyrie_5")
     .get().then(res=>{
       
@@ -66,6 +68,24 @@ Page({
     }).catch(err=>{
       console.log(err);
     })
+    // 查询记录---轮播图的
+    db.collection("lunbo")
+      .get().then(res => {
+
+        this.setData({ imgUrls: res.data });
+        console.log(this.data.imgUrls);
+      }).catch(err => {
+        console.log(err);
+      })
+     // 查询记录---潮流资讯的
+    db.collection("chaonew")
+      .get().then(res => {
+
+        this.setData({ brandImgUrls: res.data });
+        console.log(this.data.brandImgUrls);
+      }).catch(err => {
+        console.log(err);
+      })
   },
 
   jumpDetail:function(event){

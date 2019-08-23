@@ -1,0 +1,9 @@
+<!--pages/pay/pay.wxml-->
+<!-- <text>pages/pay/pay.wxml</text> -->
+<view class="container">
+<image src="{{imgurl}}"></image>
+
+</view>
+<van-button bind:click="tan" type="primary" size="large">点此支付</van-button>
+<van-popup show="{{ show }}" bind:close="onClose">买什么鞋子，留着钱给女朋友买支口红不好吗？</van-popup>
+

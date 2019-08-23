@@ -1,22 +1,38 @@
 <!--pages/cart/cart.wxml-->
 <!-- <text>pages/cart/cart.wxml</text> -->
-<!-- <van-card
-  num="1"
-  tag="标签"
-  price="10.00"
-  desc="海绵baoboa"
-  title="欧文"
-  thumb="{{imageURL}}"
->
-  <view slot="footer" class="btn">
-    <van-button type="warning" size="mini">加入购物车</van-button>
-    <van-button type="danger" size="mini">立即购买</van-button>
+<!-- 轮播图 ------------------------------------- -->
+<!--indicator-dots 是否显示面板指示点  -->
+<!--autoplay 是否自动切换  -->
+<!--interval 自动切换时间间隔  -->
+<!--duration 滑动动画时长  -->
+<!--circular 是否采用衔接滑动  -->
+ <swiper  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block class="aaa" wx:for="{{lunbo}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.img}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图下面的商品 -->
+
+<view class="container" wx:for="{{list}}" wx:key="index">
+  <view class="c_img">
+    <image src="{{item.img}}"></image>
   </view>
-</van-card> -->
-<van-card
-  num="2"
-  price="2.00"
-  desc="描述信息"
-  title="商品标题"
-  thumb="{{ imageURL }}"
-/>
+  <view class="txt">
+    <view class="name">{{item.shoeName}}</view>
+    <view class="subname">{{item.shoeSubName}}</view>
+    <view class="price">{{item.salePrice}}</view>
+    <van-button class="pay" type="danger">立即支付</van-button>
+  </view>
+</view>
+<view class="bot">
+ <view class="heji"> <text>合计:</text><text class="price">￥{{price}}</text></view>
+ <view data-price="{{price}}" bindtap="pay" class="sub">提交订单</view>
+</view>
+<!-- <van-submit-bar
+  price="{{ price }}"
+  button-text="提交订单"
+  bind:submit="onSubmit"
+/> -->
