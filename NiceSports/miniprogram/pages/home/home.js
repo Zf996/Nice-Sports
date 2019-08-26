@@ -40,6 +40,7 @@ Page({
     duration: 1000,      // 滑动动画时长
     // active: 0            //当前选中标签的索引
   },
+ 
   loadAll:function(){
     // 添加记录
     // db.collection("nike_kyrie_5")
@@ -94,6 +95,11 @@ Page({
     var url = "/pages/details/details?id="+id;
     wx.navigateTo({
       url: url,
+    })
+  },
+  jumpbuy: function () { 
+    wx.switchTab({
+      url: '/pages/buy/buy',
     })
   },
   // onChange(event) {

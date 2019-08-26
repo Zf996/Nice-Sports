@@ -44,7 +44,7 @@ circular="{{circular}}">
   <text >潮流资讯</text> 
 </view>
 <view class="brand">
-  <image class="brand_img" src="{{item.img}}" wx:for="{{brandImgUrls}}" wx:key="{{index}}"></image>
+  <image bindtap="jumpbuy" class="brand_img" src="{{item.img}}" wx:for="{{brandImgUrls}}" wx:key="{{index}}"></image>
   
 </view>
 

@@ -1,7 +1,7 @@
 <!--pages/buy/buy.wxml-->
 <!-- <text>pages/buy/buy.wxml</text> -->
 <van-tabs  animated active="{{ active }}" bind:change="onChange">
-  <van-tab title="Air Jordan 1">
+  <van-tab title="AJ 1">
     <!--  -->
 
   <view class="father" wx:for="{{list}}" wx:key="index">
@@ -37,7 +37,7 @@
 
     <!--  -->
   </van-tab>
-  <van-tab title="Air Jordan 11">
+  <van-tab title="AJ 11">
       <view class="father" wx:for="{{list}}" wx:key="index" >
     <!-- 商品图片 模糊 -->
     <view class="detail-container" style="background:url({{item.img}}) no-repeat top"></view>

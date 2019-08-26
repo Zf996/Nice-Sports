@@ -24,7 +24,7 @@
     <view class="name">{{item.shoeName}}</view>
     <view class="subname">{{item.shoeSubName}}</view>
     <view class="price">{{item.salePrice}}</view>
-    <van-button class="pay" type="danger">立即支付</van-button>
+    
   </view>
 </view>
 <view class="bot">

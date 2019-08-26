@@ -7,7 +7,14 @@ Page({
   data: {
 
   },
-
+  getUser: function (event) {
+    //  功能：获取用户的信息
+    console.log(event);
+    
+    console.log(event.detail.rawData.nickName);
+    console.log(event.detail.rawData.gender);
+    console.log(event.detail.rawData.province);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

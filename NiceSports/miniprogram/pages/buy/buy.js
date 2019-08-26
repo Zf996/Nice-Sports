@@ -40,8 +40,6 @@ cart:function(event){
     .catch(err => {
 
     })
-    
-    
     // 向购物车内的数据库cart添加数据 记录为img 和 shoeName和salePrice 和count
    db.collection("cart")
       .add({
@@ -61,7 +59,12 @@ cart:function(event){
       })
 },
 buy:function(event){
-
+  wx.showToast({
+    title:"请先加入购物车再购买..."
+  })
+// wx.switchTab({
+//   url: '/pages/cart/cart',
+// })
 },
   loadAll:function(){
     wx.showLoading({
@@ -193,7 +196,7 @@ buy:function(event){
           console.log(this.data.list);
         })
         .catch(err => {
-
+           
         })
       // 隐藏加载提示框
       wx.hideLoading();
@@ -205,6 +208,7 @@ buy:function(event){
    */
   onLoad: function (options) {
     this.loadAll();
+    cart();
   },
 
   /**

@@ -3,3 +3,12 @@
   width: 100%;
   
 }
+.pay{
+  display: flex;
+  justify-content: space-around;
+  margin-top:20rpx; 
+}
+.pay image{
+  width: 200rpx;
+  height: 200rpx;
+}
